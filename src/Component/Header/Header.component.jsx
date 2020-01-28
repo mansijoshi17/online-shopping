@@ -6,9 +6,12 @@ import { connect } from 'react-redux';
 
 import { auth } from '../../Firebase/Firebase';
 import { ReactComponent as Logo } from '../../Assets/crown.svg';
+import CartIcon from '../Cart-icon/Cart-icon.component';
+import CartDropdown from '../Cart-dropdown/Cart-dropdown.component';
 
-const Header = ({ currentUser }) => {
- return   (
+
+const Header = ({ currentUser, hidden }) => {
+    return (
 
         <div className="header">
 
@@ -21,17 +24,23 @@ const Header = ({ currentUser }) => {
                 {
                     currentUser ?
                         (<Link to="/" className="option" onClick={() => auth.signOut()}>SIGN OUT</Link>
-                        ):(
-                        <Link className="option" to="/signin">SIGN IN</Link>)
+                        ) : (
+                            <Link className="option" to="/signin">SIGN IN</Link>)
+
                 }
+                <CartIcon />
             </div>
+            {
+                hidden ? null : <CartDropdown />
+            }
         </div>
 
     );
 }
 
-const mapStateToProps = state => ({
-    currentUser: state.user.currentUser
+const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => ({
+    currentUser,
+    hidden
 })
 
 
