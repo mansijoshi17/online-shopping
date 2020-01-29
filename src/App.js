@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import './App.css';
 import Home from './Pages/HomePage/Homepage';
 import { Route, Switch } from 'react-router-dom';
@@ -12,15 +12,6 @@ import { Redirect } from 'react-router';
 
 
 class App extends React.Component {
-
-  constructor()
-  {
-    super();
-
-    this.state = {
-      currentUser:null
-    }
-  }
 
   unsubscribeFromAuth = null;
 

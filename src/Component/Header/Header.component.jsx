@@ -11,6 +11,9 @@ import CartDropdown from '../Cart-dropdown/Cart-dropdown.component';
 
 
 const Header = ({ currentUser, hidden }) => {
+    function signOut() {
+       auth.signOut();
+    }
     return (
 
         <div className="header">
@@ -23,10 +26,8 @@ const Header = ({ currentUser, hidden }) => {
                 <Link className="option" to="/contact">CONTACT</Link>
                 {
                     currentUser ?
-                        (<Link to="/" className="option" onClick={() => auth.signOut()}>SIGN OUT</Link>
-                        ) : (
-                            <Link className="option" to="/signin">SIGN IN</Link>)
-
+                        <Link to="/" className="option" onClick={signOut
+                        }>SIGN OUT</Link> : <Link className="option" to="/signin">SIGN IN</Link>
                 }
                 <CartIcon />
             </div>
