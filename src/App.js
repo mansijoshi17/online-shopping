@@ -9,6 +9,7 @@ import { auth , createUserProfileDocument } from '../src/Firebase/Firebase';
 import {connect} from 'react-redux';
 import {setCurrentUser} from './redux/user/user.action';
 import { Redirect } from 'react-router';
+import CheckoutPage from './Pages/Checkout/Checkout.component';
 
 
 class App extends React.Component {
@@ -43,6 +44,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/" component={Home} />
            <Route path="/shop" component={ShopPage} />
+           <Route exact path="/checkout" component={CheckoutPage} />
            <Route exact path="/signin" render = {() => this.props.currentUser ? (<Redirect to="/"/>) : (<SignInAndSignOut/>) } />
         </Switch>
       </div>
