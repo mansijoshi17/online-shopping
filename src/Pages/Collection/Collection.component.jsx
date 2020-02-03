@@ -1,7 +1,5 @@
 import React from 'react';
-import {connect} from 'react-redux';
-
-import CollectionItem from '../../Component/Collection-item/Collection-item.component';
+import { connect } from 'react-redux';
 
 import { selectCollection } from '../../redux/Shop/Shop.selectors';
 
@@ -9,16 +7,21 @@ import './Collection.scss';
 
 
 const CollectionPage = ({ collection }) => {
-    console.log("dfd",collection.items);
+    console.log("dfd", collection);
     return (
         <div className="collection-page">
-            <h2>COLLECTION PAGE</h2>
+            <h2>{collection.title}</h2>
+            {
+                collection.items.map(item => {
+                    return <p>{item.name}</p>
+                })
+            }
         </div>
     )
 };
 
 const mapStateToProps = (state, ownProps) => ({
-   collection :  selectCollection(ownProps.match.params.collectionId)(state)
+    collection: selectCollection(ownProps.match.params.collectionId)(state)
 })
 
 
