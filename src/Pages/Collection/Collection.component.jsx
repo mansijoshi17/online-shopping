@@ -4,18 +4,21 @@ import { connect } from 'react-redux';
 import { selectCollection } from '../../redux/Shop/Shop.selectors';
 
 import './Collection.scss';
+import CollectionItemComponent from '../../Component/Collection-item/Collection-item.component';
 
 
 const CollectionPage = ({ collection }) => {
-    console.log("dfd", collection);
+    const { title , items } = collection;
     return (
         <div className="collection-page">
-            <h2>{collection.title}</h2>
-            {
-                collection.items.map(item => {
-                    return <p>{item.name}</p>
-                })
-            }
+            <h2 className="title">{title}</h2>
+            <div className="items">
+                {
+                    items.map(item => {
+                       return <CollectionItemComponent key={item.id} item={item}/>
+                    })
+                }
+            </div>
         </div>
     )
 };
