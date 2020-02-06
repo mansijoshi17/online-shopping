@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/online-shopping/static/css/main.471fe122.chunk.css",
+    "main.js": "/online-shopping/static/js/main.140d97e3.chunk.js",
+    "main.js.map": "/online-shopping/static/js/main.140d97e3.chunk.js.map",
+    "runtime-main.js": "/online-shopping/static/js/runtime-main.e76195be.js",
+    "runtime-main.js.map": "/online-shopping/static/js/runtime-main.e76195be.js.map",
+    "static/js/2.3add04c2.chunk.js": "/online-shopping/static/js/2.3add04c2.chunk.js",
+    "static/js/2.3add04c2.chunk.js.map": "/online-shopping/static/js/2.3add04c2.chunk.js.map",
+    "index.html": "/online-shopping/index.html",
+    "precache-manifest.dafdaca2291d65dec59c5678ff2a2ba5.js": "/online-shopping/precache-manifest.dafdaca2291d65dec59c5678ff2a2ba5.js",
+    "service-worker.js": "/online-shopping/service-worker.js",
+    "static/css/main.471fe122.chunk.css.map": "/online-shopping/static/css/main.471fe122.chunk.css.map",
+    "static/js/2.3add04c2.chunk.js.LICENSE": "/online-shopping/static/js/2.3add04c2.chunk.js.LICENSE",
+    "static/media/crown.ed28accb.svg": "/online-shopping/static/media/crown.ed28accb.svg",
+    "static/media/shopping-bag.30f07071.svg": "/online-shopping/static/media/shopping-bag.30f07071.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e76195be.js",
+    "static/js/2.3add04c2.chunk.js",
+    "static/css/main.471fe122.chunk.css",
+    "static/js/main.140d97e3.chunk.js"
+  ]
+}
