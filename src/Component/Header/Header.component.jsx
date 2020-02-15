@@ -2,18 +2,16 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 
-import { auth } from '../../Firebase/Firebase';
 import { ReactComponent as Logo } from '../../Assets/crown.svg';
 import CartIcon from '../Cart-icon/Cart-icon.component';
 import CartDropdown from '../Cart-dropdown/Cart-dropdown.component';
 
-import { HeaderContainer, LogoContainer, OptionsContainer , OptionLink } from './Header.style';
+import { HeaderContainer, LogoContainer, OptionsContainer, OptionLink } from './Header.style';
+import { signOutStart } from '../../redux/user/user.action';
 
 
-const Header = ({ currentUser, hidden }) => {
-    function signOut() {
-        auth.signOut();
-    }
+const Header = ({ currentUser, hidden, signOutStart }) => {
+
     return (
 
         <HeaderContainer>
@@ -26,7 +24,7 @@ const Header = ({ currentUser, hidden }) => {
                 <OptionLink to="/contact">CONTACT</OptionLink>
                 {
                     currentUser ?
-                        <OptionLink to="/" onClick={signOut
+                        <OptionLink to="/" onClick={signOutStart
                         }>SIGN OUT</OptionLink> : <OptionLink to="/signin">SIGN IN</OptionLink>
                 }
                 <CartIcon />
@@ -44,5 +42,9 @@ const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => ({
     hidden
 })
 
+const mapDispatchToProps = dispatch => ({
+    signOutStart: () => dispatch(signOutStart())
+})
 
-export default connect(mapStateToProps)(Header);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
