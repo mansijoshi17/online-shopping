@@ -27,9 +27,8 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
     
     return (
         <div className="sign-in">
-            <h2>I already have a account</h2>
+            <h2>I already have an account</h2>
             <span>Sign in with your email email and password</span>
-
             <form onSubmit={handleSubmit}>
                 <FormInput name="email" type="email" value={email} handleChange={handleChange} label="email" />
                 <FormInput name="password" type="password" value={password} handleChange={handleChange} label="password" />
